@@ -1,6 +1,16 @@
 // Mobile Menu Toggle
 const hamburger = document.getElementById('hamburger');
 const navMenu = document.getElementById('navMenu');
+const themeToggle = document.getElementById('themeToggle');
+const progressBar = document.getElementById('progressBar');
+const backToTop = document.getElementById('backToTop');
+const demoModal = document.getElementById('demoModal');
+const openDemo = document.getElementById('openDemo');
+const openDemoSecondary = document.getElementById('openDemoSecondary');
+const closeDemo = document.getElementById('closeDemo');
+const yearEl = document.getElementById('year');
+const newsletterForm = document.getElementById('newsletterForm');
+const greeting = document.getElementById('greeting');
 
 hamburger.addEventListener('click', () => {
     hamburger.classList.toggle('active');
@@ -22,6 +32,16 @@ window.addEventListener('scroll', () => {
         navbar.classList.add('scrolled');
     } else {
         navbar.classList.remove('scrolled');
+    }
+
+    const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const progress = scrollHeight > 0 ? (window.scrollY / scrollHeight) * 100 : 0;
+    if (progressBar) {
+        progressBar.style.width = `${progress}%`;
+    }
+
+    if (backToTop) {
+        backToTop.classList.toggle('show', window.scrollY > 400);
     }
 });
 
@@ -109,3 +129,104 @@ revealElements.forEach(element => {
     element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
     revealObserver.observe(element);
 });
+
+// Theme toggle with persistence
+const setTheme = (isDark) => {
+    document.body.classList.toggle('dark', isDark);
+    if (themeToggle) {
+        themeToggle.innerHTML = isDark
+            ? '<i class="fas fa-sun" aria-hidden="true"></i>'
+            : '<i class="fas fa-moon" aria-hidden="true"></i>';
+    }
+    localStorage.setItem('cloudsync-theme', isDark ? 'dark' : 'light');
+};
+
+if (themeToggle) {
+    const savedTheme = localStorage.getItem('cloudsync-theme');
+    if (savedTheme) {
+        setTheme(savedTheme === 'dark');
+    }
+    themeToggle.addEventListener('click', () => {
+        const isDark = !document.body.classList.contains('dark');
+        setTheme(isDark);
+    });
+}
+
+// Back to top
+if (backToTop) {
+    backToTop.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+}
+
+// Demo modal
+const openModal = () => {
+    if (demoModal) {
+        demoModal.classList.add('active');
+        demoModal.setAttribute('aria-hidden', 'false');
+    }
+};
+
+const closeModal = () => {
+    if (demoModal) {
+        demoModal.classList.remove('active');
+        demoModal.setAttribute('aria-hidden', 'true');
+    }
+};
+
+if (openDemo) {
+    openDemo.addEventListener('click', openModal);
+}
+
+if (openDemoSecondary) {
+    openDemoSecondary.addEventListener('click', openModal);
+}
+
+if (closeDemo) {
+    closeDemo.addEventListener('click', closeModal);
+}
+
+if (demoModal) {
+    demoModal.addEventListener('click', (event) => {
+        if (event.target === demoModal) {
+            closeModal();
+        }
+    });
+}
+
+// FAQ accordion
+document.querySelectorAll('.faq-item').forEach(item => {
+    const button = item.querySelector('.faq-question');
+    button.addEventListener('click', () => {
+        const isActive = item.classList.contains('active');
+        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+        if (!isActive) {
+            item.classList.add('active');
+        }
+    });
+});
+
+// Newsletter form
+if (newsletterForm) {
+    newsletterForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+        newsletterForm.reset();
+        alert('Thanks for subscribing!');
+    });
+}
+
+// Update year
+if (yearEl) {
+    yearEl.textContent = new Date().getFullYear();
+}
+
+// Greeting message
+if (greeting) {
+    const hour = new Date().getHours();
+    const message = hour < 12
+        ? 'Good morning! Ready to sync your day?'
+        : hour < 18
+            ? 'Good afternoon! Let’s keep everything in sync.'
+            : 'Good evening! Your files are always ready.';
+    greeting.textContent = message;
+}
