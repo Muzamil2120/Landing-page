@@ -11,17 +11,23 @@ const closeDemo = document.getElementById('closeDemo');
 const yearEl = document.getElementById('year');
 const newsletterForm = document.getElementById('newsletterForm');
 const greeting = document.getElementById('greeting');
+const contactForm = document.getElementById('contactForm');
 
-hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('active');
-    navMenu.classList.toggle('active');
-});
+if (hamburger && navMenu) {
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        navMenu.classList.toggle('active');
+        hamburger.setAttribute('aria-expanded', hamburger.classList.contains('active'));
+    });
+}
 
 // Close mobile menu when clicking on a link
 document.querySelectorAll('.nav-link').forEach(link => {
     link.addEventListener('click', () => {
+        if (!hamburger || !navMenu) return;
         hamburger.classList.remove('active');
         navMenu.classList.remove('active');
+        hamburger.setAttribute('aria-expanded', 'false');
     });
 });
 
@@ -53,15 +59,20 @@ const observerOptions = {
 
 const animateValue = (element, start, end, duration) => {
     let startTimestamp = null;
+    const isFloat = element.dataset.target.includes('.');
     const step = (timestamp) => {
         if (!startTimestamp) startTimestamp = timestamp;
         const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-        const value = Math.floor(progress * (end - start) + start);
-        element.textContent = element.dataset.target.includes('.') 
-            ? value.toFixed(1) 
-            : value.toLocaleString();
+        const value = progress * (end - start) + start;
+        element.textContent = isFloat
+            ? value.toFixed(1)
+            : Math.floor(value).toLocaleString();
         if (progress < 1) {
             window.requestAnimationFrame(step);
+        } else {
+            element.textContent = isFloat
+                ? end.toFixed(1)
+                : Math.floor(end).toLocaleString();
         }
     };
     window.requestAnimationFrame(step);
@@ -112,7 +123,7 @@ window.addEventListener('scroll', () => {
 });
 
 // Reveal elements on scroll
-const revealElements = document.querySelectorAll('.feature-card, .testimonial-card');
+const revealElements = document.querySelectorAll('.feature-card, .testimonial-card, .pricing-card, .story-card, .step-card, .workflow-card, .case-card, .compare-row');
 
 const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -194,6 +205,12 @@ if (demoModal) {
     });
 }
 
+document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && demoModal && demoModal.classList.contains('active')) {
+        closeModal();
+    }
+});
+
 // FAQ accordion
 document.querySelectorAll('.faq-item').forEach(item => {
     const button = item.querySelector('.faq-question');
@@ -215,6 +232,14 @@ if (newsletterForm) {
     });
 }
 
+if (contactForm) {
+    contactForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+        contactForm.reset();
+        alert('Thanks for reaching out! We’ll reply within 1–2 business days.');
+    });
+}
+
 // Update year
 if (yearEl) {
     yearEl.textContent = new Date().getFullYear();
@@ -224,9 +249,9 @@ if (yearEl) {
 if (greeting) {
     const hour = new Date().getHours();
     const message = hour < 12
-        ? 'Good morning! Ready to sync your day?'
+        ? 'Good morning! Ready to grow your business?'
         : hour < 18
-            ? 'Good afternoon! Let’s keep everything in sync.'
-            : 'Good evening! Your files are always ready.';
+            ? 'Good afternoon! Let’s build your marketing plan.'
+            : 'Good evening! Growth starts with a clear strategy.';
     greeting.textContent = message;
 }

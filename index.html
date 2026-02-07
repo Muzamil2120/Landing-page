@@ -3,32 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CloudSync - Seamless Cloud Synchronization</title>
+    <meta name="description" content="GrowthNest helps small businesses grow smarter with clear strategies, practical tools, and beginner-friendly marketing guidance.">
+    <title>GrowthNest — Smart Digital Marketing for Small Businesses</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="progress-bar" id="progressBar" aria-hidden="true"></div>
-    <!-- Navbar -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
-            <div class="logo">
-                <i class="fas fa-cloud"></i>
-                CloudSync
-            </div>
+            <a class="logo" href="index.html" aria-label="GrowthNest home">
+                <i class="fas fa-seedling" aria-hidden="true"></i>
+                GrowthNest
+            </a>
             <ul class="nav-menu" id="navMenu">
-                <li><a href="#home" class="nav-link">Home</a></li>
-                <li><a href="#features" class="nav-link">Features</a></li>
-                <li><a href="#stats" class="nav-link">Stats</a></li>
-                <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
-                <li><a href="#pricing" class="nav-link">Pricing</a></li>
-                <li><a href="#faq" class="nav-link">FAQ</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="strategy.html" class="nav-link">Strategy Builder</a></li>
+                <li><a href="tools.html" class="nav-link">Tools</a></li>
+                <li><a href="learning-hub.html" class="nav-link">Learning Hub</a></li>
+                <li><a href="case-studies.html" class="nav-link">Case Studies</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
             </ul>
             <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode" title="Toggle theme">
                 <i class="fas fa-moon" aria-hidden="true"></i>
             </button>
-            <div class="hamburger" id="hamburger">
+            <div class="hamburger" id="hamburger" role="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="navMenu">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -36,7 +39,6 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="floating-shapes" aria-hidden="true">
             <span></span>
@@ -46,503 +48,168 @@
         </div>
         <div class="hero-container">
             <div class="hero-content">
-                <div class="hero-pill">New • AI-powered sync insights</div>
-                <h1>Sync Your World Instantly</h1>
+                <div class="hero-pill">Where small businesses grow smarter, not louder.</div>
+                <h1>Grow Your Business with Smart Digital Marketing</h1>
                 <p class="hero-greeting" id="greeting"></p>
-                <p>Experience seamless cloud synchronization across all your devices. Access your files anywhere, anytime with military-grade security.</p>
+                <p>GrowthNest helps startups, freelancers, and small businesses create effective marketing strategies without wasting time or money.</p>
                 <div class="hero-actions">
-                    <a href="#features" class="cta-button">Get Started Free</a>
-                    <button class="ghost-button" id="openDemo" type="button">
-                        <i class="fas fa-play" aria-hidden="true"></i>
-                        Watch Demo
-                    </button>
+                    <a href="strategy.html" class="cta-button">Build My Marketing Plan</a>
+                    <a href="tools.html" class="ghost-button">
+                        <i class="fas fa-toolbox" aria-hidden="true"></i>
+                        Explore Free Tools
+                    </a>
                 </div>
                 <div class="hero-trust">
                     <div class="trust-avatars">
-                        <img src="https://picsum.photos/seed/avatar1/40/40" alt="User avatar">
-                        <img src="https://picsum.photos/seed/avatar2/40/40" alt="User avatar">
-                        <img src="https://picsum.photos/seed/avatar3/40/40" alt="User avatar">
+                        <img src="https://picsum.photos/seed/growth1/40/40" alt="User avatar">
+                        <img src="https://picsum.photos/seed/growth2/40/40" alt="User avatar">
+                        <img src="https://picsum.photos/seed/growth3/40/40" alt="User avatar">
                     </div>
-                    <span>Trusted by 10M+ creators and teams</span>
+                    <span>Trusted by growing teams worldwide</span>
                 </div>
             </div>
             <div class="hero-image">
-                <img src="https://picsum.photos/seed/cloudsync/500/400" alt="Cloud Sync Illustration">
-                <div class="mascot-card" aria-hidden="true">
-                    <svg viewBox="0 0 120 120" role="img" aria-label="CloudSync mascot">
-                        <defs>
-                            <linearGradient id="mascotGradient" x1="0" y1="0" x2="1" y2="1">
-                                <stop offset="0%" stop-color="#667eea" />
-                                <stop offset="100%" stop-color="#764ba2" />
-                            </linearGradient>
-                        </defs>
-                        <circle cx="60" cy="60" r="42" fill="url(#mascotGradient)" />
-                        <path d="M38 62c0-9 7-16 16-16 4 0 8 2 11 4 2-6 8-10 15-10 9 0 16 7 16 16s-7 16-16 16H50c-7 0-12-5-12-10z" fill="#fff" opacity="0.95" />
-                        <circle cx="52" cy="60" r="4" fill="#312e81" />
-                        <circle cx="70" cy="60" r="4" fill="#312e81" />
-                        <path d="M54 70c4 4 12 4 16 0" stroke="#312e81" stroke-width="4" stroke-linecap="round" />
-                    </svg>
-                    <span>Meet Syncy</span>
-                </div>
+                <img src="https://picsum.photos/seed/growthnest/560/460" alt="GrowthNest marketing dashboard">
             </div>
         </div>
     </section>
 
-    <!-- Trust Section -->
-    <section class="trust" aria-label="Trusted by teams">
-        <div class="trust-container">
-            <p>Trusted by teams at</p>
-            <div class="trust-logos">
-                <span>NovaTech</span>
-                <span>BrightLabs</span>
-                <span>Orbitly</span>
-                <span>PixelForge</span>
-                <span>CloudNest</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- Brand Story Section -->
-    <section class="story" id="story">
+    <section class="story" id="why">
         <div class="story-container">
             <div class="story-content">
-                <h2 class="section-title">Built for creators who never stop</h2>
-                <p class="section-subtitle">CloudSync began as a side project to keep design teams in sync during late-night sprints. Today, it powers workflows for studios, startups, and global teams.</p>
+                <h2 class="section-title">Why GrowthNest?</h2>
+                <p class="section-subtitle">Most businesses fail in marketing because they start without a plan. GrowthNest gives you clarity, direction, and practical tools to grow with confidence.</p>
                 <div class="story-highlights">
                     <div class="story-card">
-                        <h3>Origin</h3>
-                        <p>Started in a small studio to stop losing files across devices.</p>
+                        <h3>Simple strategies</h3>
+                        <p>Clear steps built for busy owners who need results quickly.</p>
                     </div>
                     <div class="story-card">
-                        <h3>Mission</h3>
-                        <p>Make syncing effortless, secure, and beautifully simple.</p>
+                        <h3>Practical tools</h3>
+                        <p>Templates, calculators, and planners that save hours every week.</p>
                     </div>
                     <div class="story-card">
-                        <h3>Future</h3>
-                        <p>AI insights, predictive backups, and zero downtime.</p>
+                        <h3>Real-world guidance</h3>
+                        <p>Actionable advice based on what works for small businesses.</p>
                     </div>
                 </div>
             </div>
             <div class="story-visual">
-                <div class="story-badge">Since 2019</div>
+                <div class="story-badge">Strategy first</div>
                 <div class="story-metric">
-                    <span>Sync Speed</span>
-                    <strong>2.4x Faster</strong>
+                    <span>Clarity Gain</span>
+                    <strong>3x Faster</strong>
                 </div>
                 <div class="story-metric">
-                    <span>Time Saved</span>
-                    <strong>120 hrs/mo</strong>
+                    <span>Weekly Time Saved</span>
+                    <strong>8+ hours</strong>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Features Section -->
-    <section class="features" id="features">
+    <section class="features" id="offers">
         <div class="features-container">
-            <h2 class="section-title">Powerful Features</h2>
-            <p class="section-subtitle">Everything you need for seamless cloud synchronization</p>
-            
+            <h2 class="section-title">What We Offer</h2>
+            <p class="section-subtitle">Everything you need to plan, launch, and improve your marketing with confidence.</p>
             <div class="features-grid">
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <i class="fas fa-rocket"></i>
+                        <i class="fas fa-compass"></i>
                     </div>
-                    <h3 class="feature-title">Lightning Fast</h3>
-                    <p class="feature-description">Experience blazing-fast sync speeds with our optimized infrastructure. Your files are updated in real-time across all devices.</p>
+                    <h3 class="feature-title">Strategy Builder</h3>
+                    <p class="feature-description">Get a personalized marketing roadmap based on your goals and budget.</p>
                 </div>
-
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <i class="fas fa-shield-alt"></i>
+                        <i class="fas fa-toolbox"></i>
                     </div>
-                    <h3 class="feature-title">Secure & Private</h3>
-                    <p class="feature-description">Your data is protected with end-to-end encryption. We never store your encryption keys, ensuring complete privacy.</p>
+                    <h3 class="feature-title">Free Marketing Tools</h3>
+                    <p class="feature-description">Plan smarter with calculators, planners, and generators built for busy teams.</p>
                 </div>
-
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <i class="fas fa-infinity"></i>
+                        <i class="fas fa-graduation-cap"></i>
                     </div>
-                    <h3 class="feature-title">Unlimited Storage</h3>
-                    <p class="feature-description">Never worry about running out of space. Our premium plans offer unlimited storage for all your important files.</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-users"></i>
-                    </div>
-                    <h3 class="feature-title">Team Collaboration</h3>
-                    <p class="feature-description">Work together seamlessly with real-time collaboration features. Share files and folders with your team effortlessly.</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-mobile-alt"></i>
-                    </div>
-                    <h3 class="feature-title">Cross-Platform</h3>
-                    <p class="feature-description">Available on all major platforms - Windows, Mac, Linux, iOS, and Android. Sync anywhere, on any device.</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-history"></i>
-                    </div>
-                    <h3 class="feature-title">Version History</h3>
-                    <p class="feature-description">Never lose important work. Access 30 days of version history and restore previous versions with a single click.</p>
+                    <h3 class="feature-title">Learning Hub</h3>
+                    <p class="feature-description">Easy-to-understand marketing guides for beginners and growing brands.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Stats Section -->
-    <section class="stats" id="stats">
-        <div class="stats-container">
-            <div class="stat-item">
-                <div class="stat-number" data-target="10">0</div>
-                <div class="stat-label">Million Users</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number" data-target="99.9">0</div>
-                <div class="stat-label">% Uptime</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number" data-target="150">0</div>
-                <div class="stat-label">Countries</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number" data-target="24">0</div>
-                <div class="stat-label">/7 Support</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Workflow Section -->
-    <section class="workflow" id="workflow">
-        <div class="workflow-container">
-            <div class="workflow-content">
-                <h2 class="section-title">Your workflow, fully connected</h2>
-                <p class="section-subtitle">Automate backups, coordinate with your team, and get smart insights from every file update.</p>
-                <ul class="workflow-list">
-                    <li><i class="fas fa-check-circle" aria-hidden="true"></i> Smart conflict resolution</li>
-                    <li><i class="fas fa-check-circle" aria-hidden="true"></i> Automated device backups</li>
-                    <li><i class="fas fa-check-circle" aria-hidden="true"></i> Real-time activity feed</li>
-                </ul>
-            </div>
-            <div class="workflow-card">
-                <h3>Live Sync Dashboard</h3>
-                <p>Track every update in one place with timeline, device status, and security alerts.</p>
-                <div class="workflow-metrics">
-                    <div>
-                        <span>Active Devices</span>
-                        <strong>42</strong>
-                    </div>
-                    <div>
-                        <span>Files Synced</span>
-                        <strong>1.4M</strong>
-                    </div>
-                    <div>
-                        <span>Threats Blocked</span>
-                        <strong>1,920</strong>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- How It Works -->
-    <section class="steps" id="steps">
+    <section class="steps" id="audience">
         <div class="steps-container">
-            <h2 class="section-title">How CloudSync works</h2>
-            <p class="section-subtitle">Three simple steps to protect and share everything.</p>
+            <h2 class="section-title">Who Is GrowthNest For?</h2>
+            <p class="section-subtitle">If you need a marketing plan without the overwhelm, you’re in the right place.</p>
             <div class="steps-grid">
                 <div class="step-card">
                     <span class="step-number">01</span>
-                    <h3>Connect</h3>
-                    <p>Link your devices, apps, and team folders in minutes.</p>
+                    <h3>Small business owners</h3>
+                    <p>Make confident decisions without guessing.</p>
                 </div>
                 <div class="step-card">
                     <span class="step-number">02</span>
-                    <h3>Sync</h3>
-                    <p>Files update instantly with smart conflict resolution.</p>
+                    <h3>Freelancers & solopreneurs</h3>
+                    <p>Build a marketing routine that fits your schedule.</p>
                 </div>
                 <div class="step-card">
                     <span class="step-number">03</span>
-                    <h3>Secure</h3>
-                    <p>Stay safe with encrypted backups and real-time alerts.</p>
+                    <h3>Startups & students</h3>
+                    <p>Learn the fundamentals with real-world examples.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Testimonials Section -->
-    <section class="testimonials" id="testimonials">
-        <div class="testimonials-container">
-            <h2 class="section-title">What Our Users Say</h2>
-            <p class="section-subtitle">Join thousands of satisfied customers who trust CloudSync</p>
-            
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <div class="testimonial-content">
-                        <p>"CloudSync has transformed how our team collaborates. The real-time sync feature is a game-changer for our remote work setup."</p>
-                    </div>
-                    <div class="testimonial-author">
-                        <img src="https://picsum.photos/seed/user1/60/60" alt="User">
-                        <div class="author-info">
-                            <h4>Sarah Johnson</h4>
-                            <p>CEO at TechStart</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="testimonial-card">
-                    <div class="testimonial-content">
-                        <p>"The security features give me peace of mind knowing my sensitive data is protected. Best cloud service I've used!"</p>
-                    </div>
-                    <div class="testimonial-author">
-                        <img src="https://picsum.photos/seed/user2/60/60" alt="User">
-                        <div class="author-info">
-                            <h4>Michael Chen</h4>
-                            <p>Freelance Designer</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="testimonial-card">
-                    <div class="testimonial-content">
-                        <p>"I've tried many cloud services, but CloudSync's speed and reliability are unmatched. Highly recommended!"</p>
-                    </div>
-                    <div class="testimonial-author">
-                        <img src="https://picsum.photos/seed/user3/60/60" alt="User">
-                        <div class="author-info">
-                            <h4>Emily Rodriguez</h4>
-                            <p>Photographer</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Case Study -->
-    <section class="case-study" id="case-study">
-        <div class="case-container">
-            <div class="case-content">
-                <h2 class="section-title">Case study: PixelForge Studio</h2>
-                <p class="section-subtitle">Reduced file recovery time by 82% with automated sync and version history.</p>
-                <ul class="case-results">
-                    <li><strong>82%</strong> faster recovery</li>
-                    <li><strong>3x</strong> faster approvals</li>
-                    <li><strong>45%</strong> fewer conflicts</li>
-                </ul>
-            </div>
-            <div class="case-card">
-                <h3>“We finally stopped losing hours to broken file handoffs.”</h3>
-                <p>CloudSync gave us one source of truth across designers, editors, and producers.</p>
-                <div class="case-author">
-                    <img src="https://picsum.photos/seed/case1/56/56" alt="Case study author">
-                    <div>
-                        <strong>Jamal Perez</strong>
-                        <span>COO, PixelForge</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Pricing Section -->
-    <section class="pricing" id="pricing">
-        <div class="pricing-container">
-            <h2 class="section-title">Flexible Pricing</h2>
-            <p class="section-subtitle">Plans that scale with you. Cancel anytime.</p>
-            <div class="pricing-grid">
-                <div class="pricing-card">
-                    <h3>Starter</h3>
-                    <p class="price">$0<span>/mo</span></p>
-                    <ul>
-                        <li>5 GB storage</li>
-                        <li>Single device</li>
-                        <li>Basic support</li>
-                    </ul>
-                    <a href="#contact" class="btn-secondary">Choose Starter</a>
-                </div>
-                <div class="pricing-card featured">
-                    <div class="badge">Most Popular</div>
-                    <h3>Pro</h3>
-                    <p class="price">$12<span>/mo</span></p>
-                    <ul>
-                        <li>2 TB storage</li>
-                        <li>Unlimited devices</li>
-                        <li>Priority support</li>
-                        <li>Team collaboration</li>
-                    </ul>
-                    <a href="#contact" class="btn-primary">Choose Pro</a>
-                </div>
-                <div class="pricing-card">
-                    <h3>Enterprise</h3>
-                    <p class="price">Let’s talk</p>
-                    <ul>
-                        <li>Unlimited storage</li>
-                        <li>Advanced security</li>
-                        <li>Dedicated success</li>
-                    </ul>
-                    <a href="#contact" class="btn-secondary">Contact Sales</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Comparison Section -->
-    <section class="compare" id="compare">
-        <div class="compare-container">
-            <h2 class="section-title">CloudSync vs others</h2>
-            <p class="section-subtitle">See why teams switch and stay.</p>
-            <div class="compare-table">
-                <div class="compare-row compare-head">
-                    <span>Capability</span>
-                    <span>CloudSync</span>
-                    <span>Typical Cloud</span>
-                </div>
-                <div class="compare-row">
-                    <span>Real-time sync</span>
-                    <span><i class="fas fa-check" aria-hidden="true"></i></span>
-                    <span><i class="fas fa-minus" aria-hidden="true"></i></span>
-                </div>
-                <div class="compare-row">
-                    <span>Zero-knowledge security</span>
-                    <span><i class="fas fa-check" aria-hidden="true"></i></span>
-                    <span><i class="fas fa-times" aria-hidden="true"></i></span>
-                </div>
-                <div class="compare-row">
-                    <span>AI sync insights</span>
-                    <span><i class="fas fa-check" aria-hidden="true"></i></span>
-                    <span><i class="fas fa-times" aria-hidden="true"></i></span>
-                </div>
-                <div class="compare-row">
-                    <span>Unlimited devices</span>
-                    <span><i class="fas fa-check" aria-hidden="true"></i></span>
-                    <span><i class="fas fa-minus" aria-hidden="true"></i></span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ Section -->
-    <section class="faq" id="faq">
-        <div class="faq-container">
-            <h2 class="section-title">Frequently Asked Questions</h2>
-            <p class="section-subtitle">Everything you need to know about CloudSync.</p>
-            <div class="faq-list">
-                <div class="faq-item">
-                    <button class="faq-question" type="button">
-                        How secure is CloudSync?
-                        <i class="fas fa-chevron-down" aria-hidden="true"></i>
-                    </button>
-                    <div class="faq-answer">
-                        We use end-to-end encryption with zero-knowledge architecture so only you can access your data.
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-question" type="button">
-                        Can I sync across multiple devices?
-                        <i class="fas fa-chevron-down" aria-hidden="true"></i>
-                    </button>
-                    <div class="faq-answer">
-                        Yes. Pro and Enterprise plans support unlimited devices with real-time updates.
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-question" type="button">
-                        Do you offer team collaboration?
-                        <i class="fas fa-chevron-down" aria-hidden="true"></i>
-                    </button>
-                    <div class="faq-answer">
-                        Absolutely. Share folders, manage permissions, and track activity across your team.
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
     <section class="cta-section" id="contact">
         <div class="cta-container">
-            <h2 class="cta-title">Ready to Get Started?</h2>
-            <p class="cta-description">Join millions of users who trust CloudSync for their file synchronization needs.</p>
+            <h2 class="cta-title">Start growing your business today.</h2>
+            <p class="cta-description">Marketing success begins with the right strategy.</p>
             <div class="cta-buttons">
-                <a href="pricing.html" class="btn-primary">Start Free Trial</a>
-                <button class="btn-secondary" id="openDemoSecondary" type="button">Watch Demo</button>
+                <a href="strategy.html" class="btn-primary">Get Started Free</a>
+                <a href="contact.html" class="btn-secondary">Talk to Us</a>
             </div>
-            <form class="newsletter" id="newsletterForm">
-                <input type="email" name="email" placeholder="Enter your email" required>
-                <button type="submit">Get Product Updates</button>
-            </form>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-logo">
                 <div class="logo">
-                    <i class="fas fa-cloud"></i>
-                    CloudSync
+                    <i class="fas fa-seedling" aria-hidden="true"></i>
+                    GrowthNest
                 </div>
-                <p class="footer-description">Seamless cloud synchronization for all your devices.</p>
+                <p class="footer-description">Smart marketing for sustainable business growth.</p>
             </div>
-            
             <div class="footer-links">
                 <div class="footer-column">
-                    <h3>Product</h3>
+                    <h3>Quick Links</h3>
                     <ul>
-                        <li><a href="features.html">Features</a></li>
-                        <li><a href="pricing.html">Pricing</a></li>
-                        <li><a href="security.html">Security</a></li>
-                        <li><a href="integrations.html">Integrations</a></li>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="tools.html">Tools</a></li>
+                        <li><a href="learning-hub.html">Learning Hub</a></li>
+                        <li><a href="case-studies.html">Case Studies</a></li>
+                        <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
-                
-                <div class="footer-column">
-                    <h3>Company</h3>
-                    <ul>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="careers.html">Careers</a></li>
-                        <li><a href="press.html">Press</a></li>
-                        <li><a href="partners.html">Partners</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-column">
-                    <h3>Resources</h3>
-                    <ul>
-                        <li><a href="blog.html">Blog</a></li>
-                        <li><a href="help.html">Help Center</a></li>
-                        <li><a href="community.html">Community</a></li>
-                        <li><a href="status.html">Status</a></li>
-                    </ul>
-                </div>
-                
                 <div class="footer-column">
                     <h3>Legal</h3>
                     <ul>
                         <li><a href="privacy.html">Privacy Policy</a></li>
                         <li><a href="terms.html">Terms of Service</a></li>
-                        <li><a href="cookies.html">Cookie Policy</a></li>
-                        <li><a href="gdpr.html">GDPR</a></li>
                     </ul>
                 </div>
             </div>
-            
             <div class="social-links">
                 <a href="#" class="social-link" aria-label="Facebook" title="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
                 <a href="#" class="social-link" aria-label="Twitter" title="Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a>
                 <a href="#" class="social-link" aria-label="LinkedIn" title="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
                 <a href="#" class="social-link" aria-label="Instagram" title="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
-                <a href="#" class="social-link" aria-label="YouTube" title="YouTube"><i class="fab fa-youtube" aria-hidden="true"></i></a>
             </div>
-            
             <div class="footer-bottom">
-                <p class="footer-text">&copy; <span id="year">2024</span> CloudSync. All rights reserved.</p>
+                <p class="footer-text">© <span id="year">2026</span> GrowthNest. All rights reserved.</p>
             </div>
         </div>
     </footer>
@@ -550,20 +217,6 @@
     <button class="back-to-top" id="backToTop" aria-label="Back to top" title="Back to top">
         <i class="fas fa-arrow-up" aria-hidden="true"></i>
     </button>
-
-    <div class="modal" id="demoModal" aria-hidden="true" role="dialog" aria-label="Product demo">
-        <div class="modal-content">
-            <button class="modal-close" id="closeDemo" aria-label="Close demo">
-                <i class="fas fa-times" aria-hidden="true"></i>
-            </button>
-            <div class="modal-body">
-                <div class="video-placeholder">
-                    <i class="fas fa-play" aria-hidden="true"></i>
-                    <p>Demo video placeholder</p>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <script src="script.js"></script>
 </body>
